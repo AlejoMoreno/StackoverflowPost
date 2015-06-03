@@ -4,43 +4,90 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.alejandro.com.helprogrammer.Respuesta">
+    tools:context="com.alejandro.com.helprogrammer.Respuesta"
+    android:background="@drawable/fondo_negro">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Respuesta"
-        android:id="@+id/TituloRespuesta"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <FrameLayout
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_below="@+id/TituloRespuesta"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:id="@+id/Lsolucion">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Pregunta"
-            android:id="@+id/Tpregunta"
-            android:layout_gravity="center_horizontal|top" />
+            android:id="@+id/LStitulo"
+            android:gravity="center_horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Respuesta1"
-            android:id="@+id/TrespuestaUno"
-            android:layout_gravity="center" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Imprimir en java"
+                android:id="@+id/Tpregunta"
+                android:layout_gravity="center_horizontal|top"
+                android:textSize="30dp"
+                android:textColor="#fffefdff"
+                android:gravity="center_horizontal" />
+        </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Respuesta2"
-            android:id="@+id/TrespuestaDos"
-            android:layout_gravity="center_horizontal|bottom" />
-    </FrameLayout>
+            android:id="@+id/Tres"
+            android:layout_marginTop="20dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/Luno"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Q: java applet logging 7u13"
+                    android:id="@+id/TrespuestaUno"
+                    android:layout_gravity="center"
+                    android:textColor="#fffefdff" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/Ldos"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="A: applet in Java7 not working after signing jar"
+                    android:id="@+id/TrespuestaDos"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:textColor="#fffefdff" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/Ltres"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Q: applet in Java7 not working after signing jar"
+                    android:id="@+id/TrepuestaTres"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:textColor="#fffefdff" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
 </RelativeLayout>

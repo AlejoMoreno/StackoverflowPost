@@ -1,17 +1,21 @@
 package com.alejandro.com.helprogrammer.Object;
 
+import java.util.ArrayList;
+
 /**
  * Created by GSN on 26/04/2015.
  */
 public class User {
-    String usuario;
-    String password;
-    String eMail;
-    String interes;
+    private int id;
+    private String usuario;
+    private String password;
+    private String eMail;
+    private String interes;
+    ArrayList<User> lista;
 
     //*************************************Constructores********************************************
     public User(){}
-    public User(String usuario,String password, String eMail,String interes){
+    public User(int id,String usuario,String password, String eMail,String interes){
         this.usuario = usuario;
         this.password = password;
         this.eMail = eMail;
@@ -39,6 +43,12 @@ public class User {
     public String getInteres() {
         return interes;
     }
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
     public void setInteres(String interes) {
         this.interes = interes;
     }
@@ -52,4 +62,16 @@ public class User {
         else
             return false;
     }
+    public void ingresoUsuario(User usuario){
+        lista.add(usuario);
+    }
+    public void eliminarUsuario(int id){
+        lista.remove(id);
+    }
+    public ArrayList<User> listarUsuario(){
+        for (int i=0;i>lista.size();i++)
+            lista.get(i);
+        return lista;
+    }
+
 }

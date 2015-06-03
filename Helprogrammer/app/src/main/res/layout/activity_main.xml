@@ -4,15 +4,14 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
-    android:background="#ff232aff">
+    android:background="@drawable/fondo_azul">
 
     <FrameLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:background="#ff232aff"><![CDATA[>
+        android:layout_alignParentStart="true"><![CDATA[>
 
         ]]>
 

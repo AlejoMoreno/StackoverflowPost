@@ -4,130 +4,143 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.alejandro.com.helprogrammer.SiginUp">
+    tools:context="com.alejandro.com.helprogrammer.SiginUp"
+    android:background="@drawable/fondo_negro">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Registrer"
-        android:id="@+id/textView4"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/Lregistrer">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Name:"
-        android:id="@+id/name"
-        android:layout_below="@+id/textView4"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="38dp" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/LRtitulo"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="E-Mail:"
-        android:id="@+id/email"
-        android:layout_below="@+id/Tname"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Registrer"
+                android:id="@+id/TituloR"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_horizontal"
+                android:textSize="30dp"
+                android:textColor="#ffffffff" />
+        </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Interes:"
-        android:id="@+id/interes"
-        android:layout_below="@+id/TeMail"
-        android:layout_alignRight="@+id/pass2"
-        android:layout_alignEnd="@+id/pass2" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/LRtexto"
+            android:layout_marginTop="30dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Password:"
-        android:id="@+id/pass1"
-        android:layout_below="@+id/Tinteres" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/Tname"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/TituloR"
+                android:layout_marginTop="10dp"
+                android:textColor="#fffafff9"
+                android:hint="Put your name"
+                android:textColorHighlight="#ffbcbcad"
+                android:textColorHint="#ffbcbcad"
+                android:textColorLink="#ffbcbcad" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Repeat"
-        android:id="@+id/pass2"
-        android:layout_below="@+id/Tpass"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:ems="10"
+                android:id="@+id/TeMail"
+                android:layout_alignLeft="@+id/Tname"
+                android:layout_alignStart="@+id/Tname"
+                android:layout_alignRight="@+id/Tname"
+                android:layout_alignEnd="@+id/Tname"
+                android:layout_below="@+id/Tname"
+                android:layout_marginTop="10dp"
+                android:textColorHighlight="#ffbcbcad"
+                android:textColorHint="#ffbcbcad"
+                android:textColorLink="#ffbcbcad"
+                android:textColor="#ffffffff"
+                android:hint="Put your Mail" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Password:"
-        android:id="@+id/textView5"
-        android:layout_below="@+id/pass2"
-        android:layout_alignRight="@+id/pass1"
-        android:layout_alignEnd="@+id/pass1" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/Tinteres"
+                android:layout_alignLeft="@+id/TeMail"
+                android:layout_alignStart="@+id/TeMail"
+                android:layout_alignRight="@+id/TeMail"
+                android:layout_alignEnd="@+id/TeMail"
+                android:layout_below="@+id/TeMail"
+                android:layout_marginTop="10dp"
+                android:textColorHighlight="#ffbcbcad"
+                android:textColorHint="#ffbcbcad"
+                android:textColorLink="#ffbcbcad"
+                android:textColor="#ffffffff"
+                android:hint="Put yours interes" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/Tname"
-        android:layout_alignTop="@+id/name"
-        android:layout_toRightOf="@+id/pass1"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:id="@+id/Tpass"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/Tinteres"
+                android:layout_marginTop="10dp"
+                android:textColorHighlight="#ffbcbcad"
+                android:textColorHint="#ffbcbcad"
+                android:textColorLink="#ffbcbcad"
+                android:textColor="#ffffffff"
+                android:hint="Put your new Password" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:id="@+id/TeMail"
-        android:layout_alignTop="@+id/email"
-        android:layout_alignLeft="@+id/Tname"
-        android:layout_alignStart="@+id/Tname"
-        android:layout_alignRight="@+id/Tname"
-        android:layout_alignEnd="@+id/Tname" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:id="@+id/Tpass2"
+                android:layout_alignRight="@+id/Tpass"
+                android:layout_alignEnd="@+id/Tpass"
+                android:layout_below="@+id/Tpass"
+                android:layout_marginTop="10dp"
+                android:textColorHighlight="#ffbcbcad"
+                android:textColorHint="#ffbcbcad"
+                android:textColorLink="#ffbcbcad"
+                android:textColor="#ffffffff"
+                android:hint="Repeat Password" />
+        </LinearLayout>
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/Tinteres"
-        android:layout_alignTop="@+id/interes"
-        android:layout_alignLeft="@+id/TeMail"
-        android:layout_alignStart="@+id/TeMail"
-        android:layout_alignRight="@+id/TeMail"
-        android:layout_alignEnd="@+id/TeMail" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/LRbutton"
+            android:layout_marginTop="30dp">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/Tpass"
-        android:layout_alignTop="@+id/pass1"
-        android:layout_toRightOf="@+id/pass1"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/Tpass2"
-        android:layout_alignTop="@+id/pass2"
-        android:layout_toRightOf="@+id/textView5"
-        android:layout_alignRight="@+id/Tpass"
-        android:layout_alignEnd="@+id/Tpass" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Registrer"
-        android:id="@+id/Bregistrer"
-        android:layout_below="@+id/Tpass2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="107dp" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Registrer"
+                android:id="@+id/Bregistrer"
+                android:layout_below="@+id/Tpass2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="#ff232aff"
+                android:textColor="#fffffef6" />
+        </LinearLayout>
+    </LinearLayout>
 
 </RelativeLayout>
