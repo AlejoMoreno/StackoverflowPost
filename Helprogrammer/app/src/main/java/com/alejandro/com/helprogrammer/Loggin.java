@@ -8,12 +8,26 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.alejandro.com.helprogrammer.Object.MyDBHandler;
+import com.alejandro.com.helprogrammer.Object.User;
+
+import java.util.ArrayList;
 
 
 public class Loggin extends ActionBarActivity {
 
     private Button Blogin;
     private Button Bsigin;
+    private String Temail;
+    private String Tpass;
+    private EditText ETemail;
+    private EditText ETpass;
+
+    public User usuario = new User();
+    public ArrayList<User> listaUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,9 +39,16 @@ public class Loggin extends ActionBarActivity {
 
             @Override
             public void onClick(View v) {
-                Intent browserIntent =
-                        new Intent(Loggin.this, Pregunta.class);
-                startActivity(browserIntent);
+                recolectorLoggin();
+                if(validacion()==true){
+
+                    Intent browserIntent =
+                            new Intent(Loggin.this, Pregunta.class);
+                    startActivity(browserIntent);
+                }
+
+
+                //finish();
             }
         });
 
@@ -41,6 +62,47 @@ public class Loggin extends ActionBarActivity {
             }
         });
     }
+
+    public boolean validacion(){
+        boolean valor=false;
+        if(Temail.equals("") || Tpass.equals("")){
+            mensaje("ERROR, Fill in missing fields");
+            valor = false;
+        }
+        else{
+            valor=lookUser(Tpass);
+        }
+        return valor;
+    }
+
+    public boolean lookUser (String password) {
+        MyDBHandler dbHandler = new MyDBHandler(this, null, null, 1);
+        boolean valor=false;
+        User usuario = dbHandler.findUser(Temail);
+
+        if (usuario != null) {
+            mensaje("Match Found");
+            valor=true;
+            System.out.println("La clave es: "+usuario.getPassword());
+//            quantityBox.setText(String.valueOf(product.getQuantity()));
+        } else {
+            mensaje("No Match Found");
+            valor=false;
+        }
+        return valor;
+    }
+
+    public void recolectorLoggin(){
+        ETemail = (EditText) findViewById(R.id.email);
+        ETpass = (EditText) findViewById(R.id.Tpass);
+        Temail = ETemail.getText().toString();
+        Tpass = ETpass.getText().toString();
+    }
+
+    public void mensaje(String cadena){
+        Toast.makeText(this, cadena, Toast.LENGTH_SHORT).show();
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
